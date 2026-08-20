@@ -1,0 +1,4323 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Lexend+Deca:wght@300;400;500;600;700&display=swap');
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+* {
+    box-sizing: border-box;
+}
+:root{
+    --primary:#574c99;
+    --accent:#3eb696;
+    --dark:#0f0723;
+    --white:#ffffff;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'IBM Plex Sans Arabic',sans-serif;
+    direction:rtl;
+    background:#ffffff;
+    color:#211d36;
+}
+
+/* Header */
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    padding: 25px 0;
+
+    transition: .4s ease;
+
+    z-index: 9999;
+}
+header.scrolled{
+    padding: 15px 0;
+
+    background: rgba(18, 10, 40, .95);
+
+    backdrop-filter: blur(25px);
+
+    box-shadow: 0 10px 30px rgba(0,0,0,.25);
+}
+
+.header-container{
+
+    width:min(1400px,90%);
+    margin:auto;
+
+    height:84px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 28px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.1);
+
+    box-shadow:
+    0 10px 40px rgba(0,0,0,.05);
+}
+
+.header.scrolled .header-container{
+    background:rgba(15,7,35,.92);
+    backdrop-filter:blur(30px);
+}
+
+/* Logo */
+
+.logo img{
+    height:48px;
+    display:block;
+}
+
+/* Navigation */
+
+.nav{
+    display:flex;
+    align-items:center;
+    gap:38px;
+}
+
+.nav a{
+    position:relative;
+
+    color:#FFF;
+    font-family:'IBM Plex Sans Arabic',sans-serif;
+    text-decoration:none;
+
+    font-size:15px;
+    font-weight:600;
+
+    transition:.3s;
+}
+
+.nav a:hover{
+    color:#574c99;
+}
+
+.nav a.active{
+    color:#574c99;
+}
+
+.nav a::after{
+
+    content:'';
+
+    position:absolute;
+
+    left:50%;
+    bottom:-10px;
+
+    width:6px;
+    height:6px;
+
+    border-radius:50%;
+
+    background:var(--accent);
+
+    transform:
+    translateX(-50%)
+    scale(0);
+
+    transition:.3s;
+}
+
+.nav a:hover::after{
+    transform:
+    translateX(-50%)
+    scale(1);
+}
+
+/* CTA */
+
+.cta-btn{
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    text-decoration:none;
+
+    color:white;
+
+    font-weight:600;
+
+    font-size:15px;
+
+    padding:14px 24px;
+
+    border-radius:16px;
+
+    background:
+    linear-gradient(
+    135deg,
+    #574c99,
+    #6e63d3
+    );
+
+    box-shadow:
+    0 10px 30px rgba(87,76,153,.35);
+
+    transition:.35s;
+}
+
+.cta-btn:hover{
+
+    transform:
+    translateY(-4px);
+
+    background:
+    linear-gradient(
+    135deg,
+    #3eb696,
+    #56e5c1
+    );
+
+    box-shadow:
+    0 15px 40px rgba(62,182,150,.45);
+}
+
+.cta-btn svg{
+    transition:.35s;
+}
+
+.cta-btn:hover svg{
+    transform:translateX(-4px);
+}
+
+
+/* ==================================
+   HERO SECTION
+================================== */
+
+/* ==========================
+   HERO SECTION
+========================== */
+
+.hero {
+    min-height: 100vh;
+    padding-top: 100px; /* كان أقل */
+    padding-bottom: 60px;
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+    background-image: url("../images/3.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+/* Overlay */
+
+.hero::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+    linear-gradient(
+        90deg,
+        rgba(15,7,35,.45) 0%,
+        rgba(15,7,35,.15) 50%,
+        rgba(15,7,35,.45) 100%
+    );
+
+    z-index: 1;
+}
+
+/* Main Container */
+
+.hero-container{
+    position: relative;
+    z-index: 2;
+
+    width: min(1500px,92%);
+    margin: auto;
+
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+}
+
+/* ==========================
+   LEFT CONTENT
+========================== */
+
+.hero-content{
+
+    position: absolute;
+
+    left: 70px;
+    top: 55%;
+
+    transform: translateY(-50%);
+
+    max-width: 450px;
+
+    z-index: 5;
+}
+
+.hero-tag{
+
+    display: block;
+
+    color: #3eb696;
+
+    font-size: 20px;
+
+    font-weight: 700;
+
+    margin-bottom: 20px;
+}
+
+.hero-title{
+    font-family:'Lexend Deca',sans-serif;
+
+    font-size:clamp(90px,8vw,150px);
+
+    line-height:.85;
+
+    font-weight:900;
+
+    letter-spacing:-4px;
+
+    color:#fff;
+
+    margin-bottom:30px;
+
+    text-transform:uppercase;
+}
+
+.hero-title span{
+    display:block;
+
+    color:#42c7a5;
+
+    text-shadow:
+    0 0 15px rgba(66,199,165,.5);
+}
+
+.hero-desc{
+    max-width:650px;
+
+    font-size:20px;
+
+    line-height:1.8;
+
+    color:#ffffff;
+
+    font-weight:500;
+
+    margin-bottom:16px;
+}
+.hero-desc2{
+    max-width:650px;
+
+    font-size:16px;
+
+    line-height:1.8;
+
+    color:#ffffff;
+
+    font-weight:200;
+
+    margin-bottom:45px;
+}
+.event-tag{
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    color:#42c7a5;
+    font-family:'Lexend Deca',sans-serif;
+    font-size:18px;
+    font-weight:700;
+    letter-spacing:1px;
+
+    margin-bottom:20px;
+
+    text-transform:uppercase;
+}
+.hero-title{
+    animation:titleReveal 1.2s ease;
+}
+
+@keyframes titleReveal{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+.event-tag span{
+    width:40px;
+    height:2px;
+    background:#42c7a5;
+    border-radius:10px;
+    box-shadow:0 0 12px #42c7a5;
+}
+
+/* Buttons */
+
+.hero-buttons{
+
+    display: flex;
+    gap: 20px;
+}
+
+.btn-primary{
+    background:#42c7a5;
+
+    color:#fff;
+
+    border:none;
+
+    padding:18px 42px;
+
+    border-radius:18px;
+
+    font-size:20px;
+
+    font-weight:700;
+
+    transition:.4s;
+}
+
+.btn-primary:hover{
+    transform:translateY(-5px);
+
+    box-shadow:
+    0 20px 40px rgba(66,199,165,.35);
+}
+.btn-secondary{
+
+    border: 1px solid rgba(255,255,255,.35);
+
+    color: #fff;
+
+    padding: 18px 38px;
+
+    border-radius: 16px;
+
+    text-decoration: none;
+
+    transition: .3s;
+}
+
+.btn-secondary:hover{
+
+    background: rgba(255,255,255,.08);
+}
+
+
+
+/* ==========================
+   EVENT CARD
+========================== */
+
+.event-card{
+    width: 420px;
+
+    background: linear-gradient(
+        180deg,
+        rgba(103,92,197,.95),
+        rgba(86,75,170,.95)
+    );
+
+    backdrop-filter: blur(20px);
+
+    border-radius: 35px;
+
+    padding: 35px;
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.35),
+        inset 0 1px 1px rgba(255,255,255,.15);
+
+    color: #fff;
+}
+.card-row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 28px 0;
+
+    border-bottom: 1px solid rgba(255,255,255,.12);
+}
+
+.card-row:last-child{
+    border-bottom: none;
+}
+.label{
+    font-size: 14px;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    color: rgba(255,255,255,.55);
+
+    font-weight: 600;
+}
+.value{
+    font-size: 20px;
+
+    font-weight: 800;
+
+    color: #fff;
+
+    text-align: right;
+}
+
+.card-item{
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+
+    padding: 35px 0;
+
+    border-bottom: 1px solid rgba(255,255,255,.1);
+}
+
+.card-item:last-child{
+    border-bottom: none;
+}
+.card-icon{
+    width: 60px;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 18px;
+
+    background: rgba(62,182,150,.12);
+
+    border: 1px solid rgba(62,182,150,.25);
+
+    flex-shrink: 0;
+}
+
+.card-icon i{
+    font-size: 28px;
+    color: #3eb696;
+}
+.card-content{
+    flex: 1;
+}
+
+.card-label{
+    display: block;
+
+    color: rgba(255,255,255,.65);
+
+    font-size: 15px;
+
+    margin-bottom: 10px;
+}
+
+.card-content h3{
+    font-size: 2rem;
+    color: #fff;
+
+    margin-bottom: 10px;
+}
+
+.card-content p{
+    color: rgba(255,255,255,.8);
+    line-height: 1.7;
+}
+
+.event-highlights{
+    width: min(1400px,90%);
+    margin: 80px auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+
+    padding: 28px 45px;
+
+    background: rgba(255,255,255,.9);
+
+    border-radius: 100px;
+
+    backdrop-filter: blur(20px);
+
+    box-shadow:
+    0 15px 50px rgba(0,0,0,.06);
+
+    border: 1px solid rgba(87,76,153,.08);
+}
+.highlight-item{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    font-size: 1.15rem;
+    font-weight: 600;
+
+    color: #232042;
+
+    transition: .3s;
+}
+
+.highlight-item i{
+    color: #3eb696;
+    font-size: 1.3rem;
+}
+.highlight-item:hover{
+    transform: translateY(-4px);
+
+    color: #574c99;
+}
+
+.highlight-item.special{
+    color: #574c99;
+    font-weight: 800;
+}
+
+.highlight-item.special i{
+    color: #3eb696;
+}
+
+.divider{
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: #3eb696;
+
+    opacity: .8;
+}
+
+.event-highlights{
+    position: relative;
+    top: -40px;
+    z-index: 5;
+}
+
+
+.journey-section{
+    padding:120px 8%;
+    background:#f7f7fc;
+    text-align:center;
+    position:relative;
+}
+
+.section-tag{
+    color:#3eb696;
+    font-weight:700;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+.journey-section h2{
+    font-size:70px;
+    font-weight:900;
+    color:#2c2360;
+    margin:15px 0;
+}
+
+.section-desc{
+    max-width:750px;
+    margin:auto;
+    color:#666;
+    font-size:20px;
+    line-height:1.9;
+}
+
+.journey-grid{
+    margin-top:80px;
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+
+    gap:30px;
+
+    position:relative;
+    z-index:2;
+}
+
+.journey-line{
+    position:absolute;
+
+    top:58%;
+
+    left:10%;
+    width:80%;
+    height:6px;
+
+    background:linear-gradient(
+        90deg,
+        #574c99,
+        #3eb696
+    );
+
+    border-radius:20px;
+
+    opacity:.15;
+}
+
+.journey-card{
+    background:#fff;
+
+    padding:45px 30px;
+
+    border-radius:30px;
+
+    position:relative;
+
+    transition:.4s;
+
+    border:1px solid #ececf4;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.05);
+}
+
+.journey-card:hover{
+    transform:translateY(-15px);
+
+    box-shadow:
+    0 30px 60px rgba(87,76,153,.18);
+}
+
+.step{
+    width:65px;
+    height:65px;
+
+    margin:auto;
+
+    border-radius:18px;
+
+    background:
+    linear-gradient(
+    135deg,
+    #574c99,
+    #3eb696
+    );
+
+    color:white;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-weight:900;
+    font-size:22px;
+
+    margin-bottom:25px;
+}
+
+.journey-card i{
+    font-size:42px;
+    color:#574c99;
+
+    margin-bottom:20px;
+
+    display:block;
+}
+
+.journey-card h3{
+    font-size:32px;
+    color:#1f1f3f;
+
+    margin-bottom:15px;
+}
+
+.journey-card p{
+    color:#666;
+    line-height:1.9;
+    font-size:17px;
+}
+
+/* ========================================
+   SPEAKERS SECTION
+======================================== */
+
+.speakers-section {
+
+    position: relative;
+
+    padding: 120px 0 140px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(87, 76, 153, .35),
+            transparent 42%
+        ),
+        linear-gradient(
+            135deg,
+            #10072d 0%,
+            #1d0d4a 50%,
+            #0d0628 100%
+        );
+
+    color: #fff;
+}
+
+
+/* Decorative Glow */
+
+.speakers-section::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 600px;
+    height: 600px;
+
+    left: -250px;
+    bottom: -300px;
+
+    border-radius: 50%;
+
+    background: rgba(62, 182, 150, .08);
+
+    filter: blur(100px);
+
+    pointer-events: none;
+}
+
+
+.speakers-section::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    right: -200px;
+    top: -200px;
+
+    border-radius: 50%;
+
+    background: rgba(87, 76, 153, .20);
+
+    filter: blur(100px);
+
+    pointer-events: none;
+}
+
+
+/* ========================================
+   CONTAINER
+======================================== */
+
+.speakers-container {
+
+    position: relative;
+
+    width: min(1450px, 92%);
+
+    margin: auto;
+
+    z-index: 2;
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+.speakers-header {
+
+    text-align: center;
+
+    margin-bottom: 70px;
+}
+
+
+.speakers-label {
+
+    display: inline-block;
+
+    color: #3eb696;
+
+    font-family: "Lexend Deca", sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 15px;
+}
+
+
+.speakers-header h2 {
+
+    margin: 0;
+
+    font-family: "IBM Plex Sans Arabic", sans-serif;
+
+    font-size: clamp(42px, 5vw, 68px);
+
+    font-weight: 800;
+
+    color: #ffffff;
+
+    line-height: 1.2;
+}
+
+
+/* Small Line */
+
+.speakers-line {
+
+    width: 55px;
+
+    height: 4px;
+
+    margin: 18px auto 20px;
+
+    border-radius: 10px;
+
+    background: #3eb696;
+
+    box-shadow:
+        0 0 20px rgba(62, 182, 150, .45);
+}
+
+
+.speakers-header p {
+
+    margin: 0;
+
+    color: rgba(255,255,255,.62);
+
+    font-family: "IBM Plex Sans Arabic", sans-serif;
+
+    font-size: 19px;
+}
+
+
+/* ========================================
+   GRID
+======================================== */
+
+.speakers-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    gap: 18px;
+
+    direction: rtl;
+}
+
+
+/* ========================================
+   CARD
+======================================== */
+
+.speaker-card {
+
+    position: relative;
+
+    min-height: 430px;
+
+    overflow: hidden;
+
+    border-radius: 22px;
+
+    border: 1px solid rgba(255,255,255,.14);
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(56, 34, 115, .78),
+            rgba(24, 12, 59, .95)
+        );
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,.25);
+
+    transition:
+        transform .45s cubic-bezier(.2,.8,.2,1),
+        box-shadow .45s ease,
+        border-color .45s ease;
+}
+
+
+/* Card Hover */
+
+.speaker-card:hover {
+
+    transform: translateY(-12px);
+
+    border-color:
+        rgba(62,182,150,.45);
+
+    box-shadow:
+        0 30px 70px rgba(0,0,0,.45),
+        0 0 35px rgba(62,182,150,.08);
+}
+
+
+/* ========================================
+   IMAGE AREA
+======================================== */
+
+.speaker-image {
+
+    position: relative;
+
+    height: 225px;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: center;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 80%,
+            rgba(87,76,153,.55),
+            transparent 65%
+        );
+}
+
+
+/* Glow behind person */
+
+.speaker-image::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 190px;
+    height: 190px;
+
+    left: 50%;
+    bottom: -65px;
+
+    transform: translateX(-50%);
+
+    border-radius: 50%;
+
+    background:
+        rgba(62,182,150,.10);
+
+    filter: blur(20px);
+}
+
+
+/* Person PNG */
+
+.speaker-image img {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: auto;
+
+    max-width: 95%;
+
+    height: 215px;
+
+    object-fit: contain;
+
+    object-position: bottom;
+
+    display: block;
+
+    transition:
+        transform .5s cubic-bezier(.2,.8,.2,1);
+}
+
+
+/* Image Hover */
+
+.speaker-card:hover .speaker-image img {
+
+    transform:
+        translateY(-8px)
+        scale(1.04);
+}
+
+
+/* ========================================
+   INFO
+======================================== */
+
+.speaker-info {
+
+    position: relative;
+
+    min-height: 205px;
+
+    padding: 24px 18px 20px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(19,10,48,.25),
+            rgba(13,7,34,.65)
+        );
+}
+
+
+/* Name */
+
+.speaker-info h3 {
+
+    margin: 0 0 10px;
+
+    color: #ffffff;
+
+    font-family: "IBM Plex Sans Arabic", sans-serif;
+
+    font-size: 19px;
+
+    font-weight: 800;
+
+    line-height: 1.5;
+}
+
+
+/* Job */
+
+.speaker-info p {
+
+    margin: 0 auto 7px;
+
+    max-width: 240px;
+
+    color: rgba(255,255,255,.72);
+
+    font-family: "Lexend Deca",
+                 "IBM Plex Sans Arabic",
+                 sans-serif;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* Extra Role */
+
+.speaker-role {
+
+    display: block;
+
+    color: rgba(255,255,255,.48);
+
+    font-family: "Lexend Deca",
+                 "IBM Plex Sans Arabic",
+                 sans-serif;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+}
+
+
+/* ========================================
+   LINKEDIN
+======================================== */
+
+.linkedin-btn {
+
+    width: 34px;
+    height: 34px;
+
+    margin: 15px auto 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 9px;
+
+    background: #3eb696;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 17px;
+
+    box-shadow:
+        0 8px 20px rgba(62,182,150,.20);
+
+    transition:
+        transform .3s ease,
+        background .3s ease,
+        box-shadow .3s ease;
+}
+
+
+.linkedin-btn:hover {
+
+    transform:
+        translateY(-3px)
+        scale(1.05);
+
+    background: #48c9a8;
+
+    box-shadow:
+        0 12px 25px rgba(62,182,150,.35);
+}
+
+/* =========================================
+   AGENDA SECTION
+========================================= */
+
+.agenda-section {
+    position: relative;
+    padding: 130px 0 140px;
+
+    overflow: clip;
+
+    background:
+        radial-gradient(
+            circle at 75% 35%,
+            rgba(87,76,153,.10),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 15% 80%,
+            rgba(62,182,150,.06),
+            transparent 30%
+        ),
+        #f7f7fb;
+}
+
+
+/* subtle grid */
+
+.agenda-section::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(87,76,153,.035) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(87,76,153,.035) 1px,
+            transparent 1px
+        );
+
+    background-size: 60px 60px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            transparent,
+            black 20%,
+            black 80%,
+            transparent
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.agenda-container {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: min(1400px, 92%);
+
+    margin: auto;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.agenda-header {
+
+    max-width: 850px;
+
+    margin-bottom: 75px;
+
+    text-align: right;
+
+    margin-left: auto;
+}
+
+
+.agenda-eyebrow {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: #3eb696;
+
+    font-family:
+        "Lexend Deca",
+        sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 15px;
+}
+
+
+.agenda-eyebrow::before {
+
+    content: "";
+
+    width: 32px;
+
+    height: 2px;
+
+    background: #3eb696;
+
+    border-radius: 10px;
+}
+
+
+.agenda-header h2 {
+
+    margin: 0;
+
+    color: #2f2768;
+
+    font-family:
+        "IBM Plex Sans Arabic",
+        sans-serif;
+
+    font-size: clamp(45px, 5vw, 72px);
+
+    line-height: 1.1;
+
+    font-weight: 800;
+
+    letter-spacing: -1px;
+}
+
+
+.agenda-header h2 span {
+
+    color: #3eb696;
+}
+
+
+.agenda-header p {
+
+    max-width: 720px;
+
+    margin: 22px 0 0 auto;
+
+    color: #6e6a82;
+
+    font-family:
+        "IBM Plex Sans Arabic",
+        sans-serif;
+
+    font-size: 19px;
+
+    line-height: 1.9;
+}
+
+
+/* =========================================
+   LAYOUT
+========================================= */
+
+.agenda-layout {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.4fr)
+        minmax(350px, .7fr);
+
+    gap: 70px;
+
+    align-items: start;
+}
+
+
+/* =========================================
+   TIMELINE
+========================================= */
+
+.agenda-timeline {
+
+    position: relative;
+
+    padding-left: 90px;
+}
+
+
+/* vertical line */
+
+.agenda-timeline::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 37px;
+
+    top: 20px;
+
+    bottom: 20px;
+
+    width: 1px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent,
+            rgba(87,76,153,.25) 8%,
+            rgba(87,76,153,.25) 92%,
+            transparent
+        );
+}
+
+
+/* =========================================
+   ITEM
+========================================= */
+
+.agenda-item {
+
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns: 75px 1fr;
+
+    gap: 28px;
+
+    direction: ltr;
+
+    margin-bottom: 22px;
+
+    padding: 28px 30px;
+
+    border-radius: 24px;
+
+    background: rgba(255,255,255,.82);
+
+    border: 1px solid rgba(87,76,153,.08);
+
+    box-shadow:
+        0 12px 35px rgba(35,27,82,.045);
+
+    transition:
+        transform .4s ease,
+        box-shadow .4s ease,
+        border-color .4s ease;
+}
+
+
+.agenda-item:hover {
+
+    transform: translateX(8px);
+
+    border-color:
+        rgba(62,182,150,.25);
+
+    box-shadow:
+        0 20px 50px rgba(35,27,82,.10);
+}
+
+
+/* =========================================
+   TIME
+========================================= */
+
+.agenda-time {
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    direction: ltr;
+}
+
+
+.agenda-time span {
+
+    color: #574c99;
+
+    font-family:
+        "Lexend Deca",
+        sans-serif;
+
+    font-size: 22px;
+
+    font-weight: 800;
+}
+
+
+.agenda-time small {
+
+    margin-top: 3px;
+
+    color: #9994aa;
+
+    font-family:
+        "Lexend Deca",
+        sans-serif;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================
+   DOT
+========================================= */
+
+.timeline-dot {
+
+    position: absolute;
+
+    left: -68px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 15px;
+
+    height: 15px;
+
+    border-radius: 50%;
+
+    background: #f7f7fb;
+
+    border: 3px solid #574c99;
+
+    box-shadow:
+        0 0 0 6px rgba(87,76,153,.08);
+
+    transition: .3s;
+}
+
+
+.agenda-item:hover .timeline-dot {
+
+    border-color: #3eb696;
+
+    box-shadow:
+        0 0 0 7px rgba(62,182,150,.10),
+        0 0 20px rgba(62,182,150,.35);
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.agenda-content {
+
+    direction: rtl;
+
+    text-align: right;
+}
+
+
+.agenda-number {
+
+    display: inline-block;
+
+    margin-bottom: 8px;
+
+    color: #3eb696;
+
+    font-family:
+        "Lexend Deca",
+        sans-serif;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+
+.agenda-content h3 {
+
+    margin: 0 0 7px;
+
+    color: #262044;
+
+    font-family:
+        "IBM Plex Sans Arabic",
+        sans-serif;
+
+    font-size: 23px;
+
+    font-weight: 800;
+}
+
+
+.agenda-content p {
+
+    margin: 0;
+
+    color: #7b778d;
+
+    font-family:
+        "IBM Plex Sans Arabic",
+        sans-serif;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   FEATURE CARD
+========================================= */
+
+.agenda-feature {
+    position: sticky;
+    top: 110px;
+
+    align-self: start;
+
+    width: 100%;
+    min-height: 430px;
+
+    padding: 38px;
+
+    border-radius: 32px;
+
+    color: #fff;
+
+    background:
+        radial-gradient(
+            circle at 80% 10%,
+            rgba(62,182,150,.20),
+            transparent 30%
+        ),
+        linear-gradient(
+            145deg,
+            #5d4ca7,
+            #2b1b69 70%,
+            #21134e
+        );
+
+    box-shadow:
+        0 35px 80px rgba(42,25,93,.25);
+}
+
+.agenda-layout {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.4fr)
+        minmax(350px, .7fr);
+
+    gap: 70px;
+
+    align-items: start;
+}
+
+
+/* glow */
+
+.agenda-feature::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 260px;
+
+    height: 260px;
+
+    right: -100px;
+
+    bottom: -130px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255,255,255,.12);
+
+    box-shadow:
+        0 0 0 35px rgba(255,255,255,.025),
+        0 0 0 70px rgba(255,255,255,.018);
+}
+
+
+/* =========================================
+   FEATURE TOP
+========================================= */
+
+.feature-top {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    direction: ltr;
+
+    margin-bottom: 35px;
+}
+
+
+.feature-top span {
+
+    color: #7ce0c4;
+
+    font-family:
+        "Lexend Deca",
+        sans-serif;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.3px;
+}
+
+
+.feature-top i {
+
+    width: 42px;
+
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 14px;
+
+    color: #3eb696;
+
+    background: rgba(255,255,255,.08);
+
+    font-size: 20px;
+}
+
+
+/* =========================================
+   FEATURE TITLE
+========================================= */
+
+.agenda-feature h3 {
+
+    margin: 0;
+
+    direction: rtl;
+
+    text-align: right;
+
+    font-family:
+        "IBM Plex Sans Arabic",
+        sans-serif;
+
+    font-size: 43px;
+
+    line-height: 1.25;
+
+    font-weight: 800;
+}
+
+
+.agenda-feature h3 strong {
+
+    display: block;
+
+    color: #70d8bb;
+
+    font-weight: 800;
+}
+
+
+/* =========================================
+   FEATURE TEXT
+========================================= */
+
+.agenda-feature > p {
+
+    direction: rtl;
+
+    text-align: right;
+
+    color: rgba(255,255,255,.70);
+
+    font-family:
+        "IBM Plex Sans Arabic",
+        sans-serif;
+
+    font-size: 16px;
+
+    line-height: 1.9;
+
+    margin: 18px 0 28px;
+}
+
+
+/* =========================================
+   TAGS
+========================================= */
+
+.feature-tags {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+
+    direction: rtl;
+}
+
+
+.feature-tags span {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 11px 13px;
+
+    border-radius: 12px;
+
+    color: rgba(255,255,255,.85);
+
+    font-family:
+        "IBM Plex Sans Arabic",
+        sans-serif;
+
+    font-size: 12px;
+
+    background:
+        rgba(255,255,255,.07);
+
+    border: 1px solid
+        rgba(255,255,255,.07);
+
+    transition: .3s;
+}
+
+
+.feature-tags span:hover {
+
+    background:
+        rgba(62,182,150,.14);
+
+    border-color:
+        rgba(62,182,150,.25);
+
+    transform: translateY(-2px);
+}
+
+
+.feature-tags i {
+
+    color: #3eb696;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   FEATURE BOTTOM
+========================================= */
+
+.feature-bottom {
+
+    position: absolute;
+
+    left: 38px;
+
+    right: 38px;
+
+    bottom: 25px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    direction: ltr;
+
+    padding-top: 18px;
+
+    border-top:
+        1px solid rgba(255,255,255,.10);
+
+    color: rgba(255,255,255,.45);
+
+    font-family:
+        "Lexend Deca",
+        sans-serif;
+
+    font-size: 11px;
+}
+
+/* =========================================
+   BOOKING SECTION
+========================================= */
+
+.booking-section {
+
+    position: relative;
+
+    padding: 120px 0 140px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(87,76,153,.10),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 10% 80%,
+            rgba(62,182,150,.07),
+            transparent 30%
+        ),
+        #f8f8fc;
+}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.booking-container {
+
+    width: min(1250px, 92%);
+
+    margin: auto;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.booking-header {
+
+    text-align: center;
+
+    max-width: 850px;
+
+    margin: 0 auto 70px;
+}
+
+
+.booking-eyebrow {
+
+    display: inline-block;
+
+    color: #3eb696;
+
+    font-family:
+        "Lexend Deca",
+        sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 15px;
+}
+
+
+.booking-header h2 {
+
+    margin: 0;
+
+    color: #2f2768;
+
+    font-family:
+        "IBM Plex Sans Arabic",
+        sans-serif;
+
+    font-size: clamp(40px, 5vw, 65px);
+
+    line-height: 1.2;
+
+    font-weight: 800;
+}
+
+
+.booking-header h2 span {
+
+    color: #574c99;
+}
+
+
+.booking-header p {
+
+    margin: 18px auto 0;
+
+    color: #77738b;
+
+    font-family:
+        "IBM Plex Sans Arabic",
+        sans-serif;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   LAYOUT
+========================================= */
+
+.checkout-layout {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.45fr)
+        390px;
+
+    gap: 30px;
+
+    align-items: start;
+
+    direction: ltr;
+}
+
+
+/* =========================================
+   LEFT AREA
+========================================= */
+
+.attendees-area {
+
+    direction: rtl;
+
+    background: rgba(255,255,255,.82);
+
+    border: 1px solid rgba(87,76,153,.09);
+
+    border-radius: 28px;
+
+    padding: 30px;
+
+    box-shadow:
+        0 20px 60px rgba(42,31,90,.07);
+}
+
+
+/* =========================================
+   PROGRESS
+========================================= */
+
+.checkout-progress {
+
+    display: flex;
+
+    align-items: center;
+
+    direction: ltr;
+
+    margin-bottom: 28px;
+}
+
+
+.progress-step {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    white-space: nowrap;
+
+    color: #aaa6b7;
+
+    font-family:
+        "Lexend Deca",
+        sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: .5px;
+}
+
+
+.progress-step span {
+
+    width: 25px;
+    height: 25px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #eeeef5;
+
+    color: #817c91;
+
+    font-size: 10px;
+}
+
+
+.progress-step.active {
+
+    color: #574c99;
+}
+
+
+.progress-step.active span {
+
+    color: #fff;
+
+    background: #574c99;
+}
+
+
+.progress-line {
+
+    flex: 1;
+
+    height: 1px;
+
+    margin: 0 12px;
+
+    background: #e4e2eb;
+}
+
+
+/* =========================================
+   SECURE
+========================================= */
+
+.secure-badge {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    margin-bottom: 18px;
+
+    padding: 7px 11px;
+
+    border-radius: 30px;
+
+    color: #249f80;
+
+    background: #e9f8f3;
+
+    font-family:
+        "Lexend Deca",
+        sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================
+   ATTENDEE CARD
+========================================= */
+
+.attendee-card {
+
+    position: relative;
+
+    margin-bottom: 18px;
+
+    padding: 26px;
+
+    border-radius: 22px;
+
+    border: 1px solid #e8e6ef;
+
+    background: #fff;
+
+    animation:
+        attendeeIn .45s ease both;
+
+    transition:
+        border-color .3s,
+        box-shadow .3s;
+}
+
+
+.attendee-card:hover {
+
+    border-color:
+        rgba(87,76,153,.25);
+
+    box-shadow:
+        0 12px 30px rgba(87,76,153,.07);
+}
+
+
+@keyframes attendeeIn {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(15px)
+            scale(.98);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* =========================================
+   ATTENDEE HEADER
+========================================= */
+
+.attendee-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 22px;
+}
+
+
+.attendee-title {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+.attendee-number {
+
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 11px;
+
+    color: #574c99;
+
+    background: #f0eef9;
+
+    font-family:
+        "Lexend Deca",
+        sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 800;
+}
+
+
+.attendee-title h3 {
+
+    margin: 0;
+
+    color: #292440;
+
+    font-family:
+        "IBM Plex Sans Arabic",
+        sans-serif;
+
+    font-size: 18px;
+
+    font-weight: 800;
+}
+
+
+/* =========================================
+   FORM GRID
+========================================= */
+
+.form-grid {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 16px;
+}
+
+
+.form-group {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+
+.form-group.full {
+
+    grid-column: 1 / -1;
+}
+
+
+.form-group label {
+
+    color: #666276;
+
+    font-family:
+        "IBM Plex Sans Arabic",
+        sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+
+.form-group label span {
+
+    color: #e45b70;
+}
+
+
+.form-group input,
+.form-group select {
+
+    width: 100%;
+
+    height: 50px;
+
+    padding: 0 15px;
+
+    border-radius: 12px;
+
+    border: 1px solid #e5e3ec;
+
+    outline: none;
+
+    background: #fafafd;
+
+    color: #28233e;
+
+    font-family:
+        "IBM Plex Sans Arabic",
+        sans-serif;
+
+    font-size: 13px;
+
+    transition:
+        border-color .25s,
+        box-shadow .25s,
+        background .25s;
+}
+
+
+.form-group input:focus,
+.form-group select:focus {
+
+    background: #fff;
+
+    border-color: #574c99;
+
+    box-shadow:
+        0 0 0 4px rgba(87,76,153,.08);
+}
+
+
+.remove-attendee {
+
+    border: none;
+
+    background: transparent;
+
+    color: #a9a5b4;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+    transition: .25s;
+}
+
+
+.remove-attendee:hover {
+
+    color: #df5d70;
+
+    transform: scale(1.1);
+}
+
+
+/* =========================================
+   PROMO
+========================================= */
+
+/* =========================================
+   REGISTRATION CONFIRMATION
+========================================= */
+
+.registration-confirmation {
+    margin-top: 28px;
+}
+
+
+/* =========================================
+   DIVIDER
+========================================= */
+
+.confirmation-divider {
+
+    width: 100%;
+
+    height: 1px;
+
+    margin-bottom: 22px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #e3e1eb 15%,
+            #e3e1eb 85%,
+            transparent
+        );
+}
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+.confirmation-title {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    margin-bottom: 16px;
+
+    color: #574c99;
+
+    font-family:
+        "IBM Plex Sans Arabic",
+        sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 800;
+}
+
+
+.confirmation-title i {
+
+    color: #3eb696;
+
+    font-size: 16px;
+}
+
+
+/* =========================================
+   CHECK ROW
+========================================= */
+
+.check-row {
+
+    position: relative;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 12px;
+
+    width: 100%;
+
+    margin-bottom: 13px;
+
+    cursor: pointer;
+
+    direction: rtl;
+}
+
+
+/* Hide native checkbox */
+
+.check-row input {
+
+    position: absolute;
+
+    opacity: 0;
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   CUSTOM CHECKBOX
+========================================= */
+
+.custom-check {
+
+    flex: 0 0 auto;
+
+    width: 19px;
+    height: 19px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 3px;
+
+    border: 1.5px solid #bdb9c9;
+
+    border-radius: 5px;
+
+    background: #fff;
+
+    transition:
+        background .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease,
+        transform .2s ease;
+}
+
+
+.custom-check i {
+
+    color: #fff;
+
+    font-size: 12px;
+
+    font-weight: 900;
+
+    opacity: 0;
+
+    transform: scale(.5);
+
+    transition:
+        opacity .2s ease,
+        transform .2s ease;
+}
+
+
+/* Checked */
+
+.check-row input:checked + .custom-check {
+
+    border-color: #574c99;
+
+    background: #574c99;
+
+    box-shadow:
+        0 5px 12px rgba(87,76,153,.18);
+}
+
+
+.check-row input:checked + .custom-check i {
+
+    opacity: 1;
+
+    transform: scale(1);
+}
+
+
+/* Hover */
+
+.check-row:hover .custom-check {
+
+    border-color: #574c99;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================
+   TEXT
+========================================= */
+
+.check-text {
+
+    color: #686477;
+
+    font-family:
+        "IBM Plex Sans Arabic",
+        sans-serif;
+
+    font-size: 12px;
+
+    line-height: 1.9;
+}
+
+
+.check-text a {
+
+    color: #574c99;
+
+    font-weight: 800;
+
+    text-decoration: none;
+
+    border-bottom: 1px solid transparent;
+
+    transition: .25s;
+}
+
+
+.check-text a:hover {
+
+    color: #3eb696;
+
+    border-bottom-color: #3eb696;
+}
+
+
+/* =========================================
+   CHECKOUT BUTTON
+========================================= */
+
+.registration-confirmation
+.checkout-button {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 58px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 14px;
+
+    margin-top: 24px;
+
+    border: none;
+
+    border-radius: 15px;
+
+    color: #fff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #574c99 0%,
+            #4b3d8d 100%
+        );
+
+    font-family:
+        "IBM Plex Sans Arabic",
+        sans-serif;
+
+    font-size: 16px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 14px 30px rgba(87,76,153,.20);
+
+    overflow: hidden;
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+
+/* Shine */
+
+.registration-confirmation
+.checkout-button::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -120%;
+
+    width: 80%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.16),
+            transparent
+        );
+
+    transform: skewX(-20deg);
+
+    transition: left .6s ease;
+}
+
+
+.registration-confirmation
+.checkout-button:hover::before {
+
+    left: 130%;
+}
+
+
+.registration-confirmation
+.checkout-button:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 20px 40px rgba(87,76,153,.28);
+}
+
+
+.registration-confirmation
+.checkout-button i {
+
+    font-size: 17px;
+
+    transition: transform .25s ease;
+}
+
+
+.registration-confirmation
+.checkout-button:hover i {
+
+    transform: translateX(-5px);
+}
+
+
+/* =========================================
+   NOTE
+========================================= */
+
+.registration-note {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 6px;
+
+    margin-top: 15px;
+
+    color: #9a96a7;
+
+    font-family:
+        "Lexend Deca",
+        sans-serif;
+
+    font-size: 10px;
+}
+
+
+.registration-note i {
+
+    color: #3eb696;
+
+    font-size: 11px;
+}
+
+
+/* =========================================
+   CHECKOUT BUTTON
+========================================= */
+
+.checkout-button {
+
+    width: 100%;
+
+    height: 58px;
+
+    margin-top: 20px;
+
+    border: none;
+
+    border-radius: 15px;
+
+    color: #fff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #574c99,
+            #493d89
+        );
+
+    font-family:
+        "IBM Plex Sans Arabic",
+        sans-serif;
+
+    font-size: 16px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 12px 30px rgba(87,76,153,.20);
+
+    transition: .3s;
+}
+
+
+.checkout-button:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 18px 40px rgba(87,76,153,.28);
+}
+
+
+/* =========================================
+   RIGHT SUMMARY
+========================================= */
+
+.ticket-summary {
+
+    position: sticky;
+
+    top: 110px;
+
+    direction: rtl;
+
+    padding: 28px;
+
+    border-radius: 26px;
+
+    color: #fff;
+
+    background:
+        linear-gradient(
+            145deg,
+            #5e50a1,
+            #33236f
+        );
+
+    box-shadow:
+        0 25px 60px rgba(50,35,110,.25);
+}
+
+
+/* Logo */
+
+.summary-logo {
+
+    text-align: right;
+
+    color: #fff;
+
+    font-family:
+        "Lexend Deca",
+        sans-serif;
+
+    font-weight: 800;
+
+    font-size: 20px;
+
+    line-height: 1;
+}
+
+
+.summary-logo small {
+
+    display: block;
+
+    margin-top: 5px;
+
+    letter-spacing: 4px;
+
+    font-size: 8px;
+
+    opacity: .7;
+}
+
+
+.selected-label {
+
+    display: block;
+
+    margin-top: 35px;
+
+    color: #6ee0c1;
+
+    font-family:
+        "Lexend Deca",
+        sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+
+.ticket-summary h3 {
+
+    margin: 10px 0 5px;
+
+    font-family:
+        "IBM Plex Sans Arabic",
+        sans-serif;
+
+    font-size: 25px;
+
+    line-height: 1.4;
+}
+
+
+.ticket-summary h3 span {
+
+    font-weight: 400;
+
+    opacity: .7;
+}
+
+
+.event-meta {
+
+    margin: 0;
+
+    color: rgba(255,255,255,.55);
+
+    font-size: 11px;
+}
+
+
+/* Price */
+
+.ticket-price {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-top: 30px;
+
+    direction: ltr;
+}
+
+
+.ticket-price strong {
+
+    font-family:
+        "Lexend Deca",
+        sans-serif;
+
+    font-size: 18px;
+}
+
+
+.ticket-price span {
+
+    color: rgba(255,255,255,.55);
+
+    font-size: 10px;
+}
+
+
+/* Quantity */
+
+.quantity-row {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-top: 22px;
+
+    direction: ltr;
+}
+
+
+.quantity-row > span {
+
+    font-family:
+        "Lexend Deca",
+        sans-serif;
+
+    font-size: 11px;
+
+    color: rgba(255,255,255,.6);
+}
+
+
+.quantity-control {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+}
+
+
+.quantity-control button {
+
+    width: 31px;
+    height: 31px;
+
+    border: 1px solid rgba(255,255,255,.2);
+
+    border-radius: 9px;
+
+    color: #fff;
+
+    background: rgba(255,255,255,.08);
+
+    cursor: pointer;
+
+    transition: .25s;
+}
+
+
+.quantity-control button:hover {
+
+    background: #3eb696;
+
+    border-color: #3eb696;
+}
+
+
+.quantity-control strong {
+
+    min-width: 20px;
+
+    text-align: center;
+
+    font-family:
+        "Lexend Deca",
+        sans-serif;
+}
+
+
+/* Divider */
+
+.summary-divider {
+
+    height: 1px;
+
+    margin: 25px 0;
+
+    background:
+        rgba(255,255,255,.12);
+}
+
+
+/* Total */
+
+.total-row {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    direction: ltr;
+}
+
+
+.total-row span {
+
+    color: rgba(255,255,255,.55);
+
+    font-size: 11px;
+}
+
+
+.total-row strong {
+
+    font-family:
+        "Lexend Deca",
+        sans-serif;
+
+    font-size: 28px;
+
+    color: #fff;
+}
+
+
+/* Note */
+
+.summary-note {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 9px;
+
+    margin-top: 25px;
+
+    padding: 13px;
+
+    border-radius: 12px;
+
+    background:
+        rgba(255,255,255,.06);
+}
+
+
+.summary-note i {
+
+    color: #6ee0c1;
+
+    margin-top: 2px;
+}
+
+
+.summary-note p {
+
+    margin: 0;
+
+    color: rgba(255,255,255,.58);
+
+    font-size: 12px;
+
+    line-height: 1.7;
+}
+
+/* =========================================
+   VALIDATION
+========================================= */
+
+.form-group input.input-error,
+.form-group select.input-error {
+
+    border-color: #e45d70 !important;
+
+    background: #fff8f9;
+
+    box-shadow:
+        0 0 0 4px rgba(228,93,112,.07);
+}
+
+
+.form-group input.input-error:focus {
+
+    border-color: #e45d70 !important;
+}
+
+
+.check-row.check-error {
+
+    padding: 10px;
+
+    border-radius: 10px;
+
+    background: rgba(228,93,112,.06);
+
+    animation: checkShake .35s ease;
+}
+
+
+.check-row.check-error .custom-check {
+
+    border-color: #e45d70;
+
+}
+
+
+@keyframes checkShake {
+
+    0%, 100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-4px);
+    }
+
+    75% {
+        transform: translateX(4px);
+    }
+}
+
+
+/* =========================================
+   LOADER
+========================================= */
+
+.button-loader {
+
+    width: 18px;
+    height: 18px;
+
+    border: 2px solid rgba(255,255,255,.35);
+
+    border-top-color: #fff;
+
+    border-radius: 50%;
+
+    animation:
+        buttonSpin .7s linear infinite;
+}
+
+
+@keyframes buttonSpin {
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.site-footer {
+
+    position: relative;
+
+    width: 100%;
+
+    background: #ffffff;
+
+    border-top: 1px solid rgba(87, 76, 153, .10);
+
+    overflow: hidden;
+
+}
+
+
+/* =========================================
+   TOP ACCENT
+========================================= */
+
+.site-footer::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 50%;
+
+    width: 160px;
+    height: 2px;
+
+    transform: translateX(-50%);
+
+    background:
+        linear-gradient(
+            90deg,
+            #574c99,
+            #3eb696
+        );
+
+    border-radius: 0 0 10px 10px;
+}
+
+
+/* =========================================
+   FOOTER CONTAINER
+========================================= */
+
+.footer-container {
+
+    width: min(1280px, 92%);
+
+    min-height: 130px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        auto
+        1fr;
+
+    align-items: center;
+
+    gap: 30px;
+
+}
+
+
+/* =========================================
+   WEBSITE LINK
+========================================= */
+
+.footer-link {
+
+    justify-self: start;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    color: #574c99;
+
+    text-decoration: none;
+
+    font-family:
+        "Lexend Deca",
+        sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    transition:
+        color .25s ease,
+        transform .25s ease;
+}
+
+
+.footer-link-icon {
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 13px;
+
+    transition:
+        transform .25s ease;
+}
+
+
+.footer-link:hover {
+
+    color: #3eb696;
+
+    transform: translateY(-2px);
+}
+
+
+.footer-link:hover
+.footer-link-icon {
+
+    transform:
+        translate(2px, -2px);
+}
+
+
+/* =========================================
+   COPYRIGHT
+========================================= */
+
+.footer-copy {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 6px;
+
+    color: #77738b;
+
+    font-family:
+        "Lexend Deca",
+        "IBM Plex Sans Arabic",
+        sans-serif;
+
+    font-size: 13px;
+
+    white-space: nowrap;
+}
+
+
+.footer-copy span:first-child {
+
+    color: #574c99;
+
+    font-weight: 700;
+}
+
+
+.footer-dash {
+
+    color: #b5b1bf;
+}
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+.footer-logo {
+
+    justify-self: end;
+
+    display: flex;
+
+    align-items: center;
+
+    transition:
+        transform .3s ease,
+        opacity .3s ease;
+}
+
+
+.footer-logo img {
+
+    display: block;
+
+    width: 155px;
+
+    height: auto;
+
+    object-fit: contain;
+}
+
+
+.footer-logo:hover {
+
+    transform: translateY(-3px);
+
+    opacity: .88;
+}
+
+
+/* =========================================
+   SUBTLE BACKGROUND GLOW
+========================================= */
+
+.site-footer::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    right: -180px;
+    bottom: -240px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(87,76,153,.07),
+            transparent 70%
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   ARABIAN ACADEMY — RESPONSIVE SYSTEM
+   Preserves desktop design + original animations
+========================================================= */
+
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Hamburger is mobile-only */
+.mobile-menu-btn {
+    display: none;
+}
+
+/* =========================
+   TABLET / SMALL DESKTOP
+========================= */
+@media (max-width: 1180px) {
+    .header-container {
+        width: 94%;
+        padding: 0 20px;
+    }
+
+    .nav {
+        gap: 22px;
+    }
+
+    .nav a {
+        font-size: 13px;
+    }
+
+    .cta-btn {
+        padding: 12px 18px;
+        font-size: 13px;
+    }
+
+    .hero-content {
+        left: 40px;
+        max-width: 400px;
+    }
+
+    .hero-title {
+        font-size: clamp(78px, 8vw, 120px);
+    }
+
+    .hero-statue {
+        width: min(48vw, 560px);
+    }
+
+    .hero-card {
+        width: min(32vw, 370px);
+        margin-right: 20px;
+    }
+
+    .journey-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .speakers-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .checkout-layout {
+        grid-template-columns: minmax(0, 1fr) 350px;
+    }
+}
+
+/* =========================
+   TABLET
+========================= */
+@media (max-width: 900px) {
+    .header {
+        padding: 12px 0;
+    }
+
+    .header-container {
+        height: 70px;
+        padding: 0 16px;
+    }
+
+    .logo img {
+        height: 40px;
+    }
+
+    .nav {
+        gap: 14px;
+    }
+
+    .nav a {
+        font-size: 11px;
+    }
+
+    .cta-btn {
+        padding: 10px 14px;
+        font-size: 11px;
+    }
+
+    .hero {
+        min-height: 820px;
+    }
+
+    .hero-content {
+        left: 24px;
+        max-width: 340px;
+    }
+
+    .hero-title {
+        font-size: clamp(65px, 9vw, 92px);
+    }
+
+    .hero-desc {
+        font-size: 16px;
+    }
+
+    .hero-desc2 {
+        font-size: 13px;
+        margin-bottom: 30px;
+    }
+
+    .hero-statue {
+        width: min(46vw, 500px);
+    }
+
+    .hero-card {
+        width: min(30vw, 310px);
+        margin-right: 8px;
+    }
+
+    .event-highlights {
+        width: 92%;
+        gap: 18px;
+        padding: 22px 25px;
+    }
+
+    .divider {
+        display: none;
+    }
+
+    .agenda-layout,
+    .checkout-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .agenda-feature,
+    .ticket-summary {
+        order: -1;
+    }
+
+    .ticket-summary {
+        position: relative;
+        top: auto;
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 768px) {
+
+    /* ---------- HEADER ---------- */
+    .header {
+        top: 8px;
+        left: 10px;
+        right: 10px;
+        width: auto;
+        padding: 0;
+        z-index: 9999;
+    }
+
+    .header.scrolled {
+        padding: 0;
+        background: transparent;
+        box-shadow: none;
+    }
+
+    .header-container {
+        width: 100%;
+        height: 62px;
+        padding: 0 10px;
+        gap: 9px;
+        border-radius: 16px;
+        background: rgba(255,255,255,.96);
+        border: 1px solid rgba(87,76,153,.12);
+        box-shadow: 0 10px 35px rgba(30,20,70,.14);
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+    }
+
+    .header.scrolled .header-container {
+        background: rgba(15,7,35,.94);
+    }
+
+    .header .logo {
+        width: 102px;
+        flex-shrink: 0;
+    }
+
+    .header .logo img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* hamburger */
+    .mobile-menu-btn {
+        width: 42px;
+        height: 42px;
+        margin-inline-start: auto;
+        padding: 0;
+        border: 0;
+        border-radius: 12px;
+        background: var(--primary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        flex-shrink: 0;
+        box-shadow: 0 7px 18px rgba(87,76,153,.24);
+        transition: transform .25s ease, background .25s ease;
+    }
+
+    .mobile-menu-btn span {
+        width: 19px;
+        height: 2px;
+        display: block;
+        border-radius: 20px;
+        background: #fff;
+        transition: transform .3s ease, opacity .2s ease;
+    }
+
+    .mobile-menu-btn.active span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .mobile-menu-btn.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .mobile-menu-btn.active span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* hide desktop nav/CTA, but keep nav available for dropdown */
+    .header .nav {
+        position: absolute;
+        top: calc(100% + 10px);
+        left: 0;
+        right: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 4px;
+        padding: 10px;
+        background: rgba(255,255,255,.98);
+        border: 1px solid rgba(87,76,153,.12);
+        border-radius: 18px;
+        box-shadow: 0 18px 45px rgba(30,20,70,.16);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transform: translateY(-10px) scale(.98);
+        transform-origin: top center;
+        transition: opacity .25s ease, visibility .25s ease, transform .25s ease;
+        z-index: 10000;
+    }
+
+    .header .nav.menu-open {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateY(0) scale(1);
+    }
+
+    .header .nav a {
+        width: 100%;
+        padding: 13px 15px;
+        border-radius: 10px;
+        color: #211d36 !important;
+        font-size: 14px;
+        font-weight: 600;
+        text-align: right;
+        white-space: nowrap;
+    }
+
+    .header .nav a::after {
+        display: none;
+    }
+
+    .header .nav a:hover,
+    .header .nav a.active {
+        color: var(--primary) !important;
+        background: rgba(87,76,153,.07);
+    }
+
+    .header .cta-btn {
+        display: none;
+    }
+
+    /* ---------- HERO ---------- */
+    .hero {
+        min-height: auto;
+        padding: 100px 14px 50px;
+        overflow: hidden;
+    }
+
+    .hero-container {
+        width: 100%;
+        min-height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 22px;
+    }
+
+    .hero-content {
+        position: relative;
+        inset: auto;
+        transform: none;
+        width: 100%;
+        max-width: 100%;
+        padding: 12px 4px 0;
+        text-align: center;
+        order: 1;
+    }
+
+    .event-tag {
+        justify-content: center;
+        font-size: 10px;
+        letter-spacing: .7px;
+        margin-bottom: 14px;
+    }
+
+    .event-tag span {
+        width: 25px;
+    }
+
+    .hero-title {
+        font-size: clamp(50px, 15vw, 76px);
+        line-height: .9;
+        letter-spacing: -2px;
+        /* preserve titleReveal animation */
+        animation: titleReveal 1.2s ease both;
+    }
+
+    .hero-desc {
+        width: min(100%, 370px);
+        margin: 18px auto 10px;
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .hero-desc2 {
+        width: min(100%, 360px);
+        margin: 0 auto 22px;
+        font-size: 11px;
+        line-height: 1.75;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+        gap: 9px;
+        flex-wrap: wrap;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        min-width: 140px;
+        padding: 13px 16px;
+        font-size: 13px;
+        border-radius: 13px;
+    }
+
+    .hero-statue {
+        position: relative;
+        left: auto;
+        top: auto;
+        transform: none;
+        width: min(100%, 430px);
+        margin: 0 auto;
+        order: 2;
+    }
+
+    .hero-statue img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .hero-card {
+        position: relative;
+        right: auto;
+        top: auto;
+        transform: none;
+        width: 100%;
+        max-width: 430px;
+        margin: 0 auto;
+        order: 3;
+    }
+
+    .hero-card .card-item {
+        padding: 19px 0;
+        gap: 12px;
+    }
+
+    .hero-card .card-icon {
+        width: 45px;
+        height: 45px;
+        border-radius: 13px;
+    }
+
+    .hero-card .card-icon i {
+        font-size: 20px;
+    }
+
+    .hero-card .card-content h3 {
+        font-size: 1.08rem;
+    }
+
+    .hero-card .card-content p {
+        font-size: 11px;
+    }
+
+    /* ---------- HIGHLIGHTS ---------- */
+    .event-highlights {
+        width: calc(100% - 28px);
+        margin: 30px auto 55px;
+        padding: 18px 15px;
+        border-radius: 22px;
+        flex-direction: column;
+        gap: 12px;
+        top: 0;
+    }
+
+    .highlight-item {
+        justify-content: center;
+        text-align: center;
+        font-size: .82rem;
+    }
+
+    /* ---------- JOURNEY ---------- */
+    .journey-section {
+        padding: 70px 16px;
+    }
+
+    .journey-section h2 {
+        font-size: clamp(34px, 10vw, 48px);
+        line-height: 1.25;
+    }
+
+    .section-desc {
+        width: min(100%, 350px);
+        font-size: 14px;
+        line-height: 1.85;
+    }
+
+    .journey-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        margin-top: 36px;
+    }
+
+    .journey-line {
+        display: none;
+    }
+
+    .journey-card {
+        width: 100%;
+        padding: 28px 20px;
+        border-radius: 21px;
+    }
+
+    /* ---------- SPEAKERS ---------- */
+    .speakers-section {
+        padding: 70px 0 80px;
+    }
+
+    .speakers-container {
+        width: calc(100% - 28px);
+    }
+
+    .speakers-header {
+        margin-bottom: 40px;
+    }
+
+    .speakers-header h2 {
+        font-size: clamp(38px, 10vw, 52px);
+    }
+
+    .speakers-header p {
+        font-size: 13px;
+    }
+
+    .speakers-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 13px;
+    }
+
+    .speaker-card {
+        min-width: 0;
+        min-height: 0;
+        border-radius: 20px;
+    }
+
+    .speaker-image {
+        height: 215px;
+    }
+
+    .speaker-image img {
+        width: auto;
+        max-width: 95%;
+        height: 205px;
+    }
+
+    .speaker-info {
+        min-height: 175px;
+        padding: 18px 12px;
+    }
+
+    .speaker-info h3 {
+        font-size: 15px;
+    }
+
+    .speaker-info p,
+    .speaker-role {
+        font-size: 11px;
+        line-height: 1.6;
+    }
+
+    .linkedin-btn {
+        width: 31px;
+        height: 31px;
+        margin-top: 11px;
+        font-size: 15px;
+    }
+
+    /* ---------- AGENDA ---------- */
+    .agenda-section {
+        padding: 70px 0 80px;
+    }
+
+    .agenda-container {
+        width: calc(100% - 28px);
+    }
+
+    .agenda-layout {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .agenda-feature {
+        order: -1;
+    }
+
+    .agenda-item {
+        grid-template-columns: 55px 15px minmax(0,1fr);
+        gap: 9px;
+    }
+
+    .agenda-time span {
+        font-size: 13px;
+    }
+
+    .agenda-time small {
+        font-size: 9px;
+    }
+
+    .agenda-content {
+        min-width: 0;
+        padding: 17px;
+        border-radius: 17px;
+    }
+
+    .agenda-content h3 {
+        font-size: 16px;
+    }
+
+    .agenda-content p {
+        font-size: 11px;
+        line-height: 1.7;
+    }
+
+    /* ---------- BOOKING ---------- */
+    .booking-section {
+        padding: 70px 0 80px;
+    }
+
+    .booking-container {
+        width: calc(100% - 28px);
+    }
+
+    .booking-header h2 {
+        font-size: clamp(30px, 9vw, 42px);
+        line-height: 1.3;
+    }
+
+    .booking-header p {
+        font-size: 13px;
+        line-height: 1.8;
+    }
+
+    .checkout-layout {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .ticket-summary {
+        position: relative;
+        top: auto;
+        order: -1;
+        width: 100%;
+    }
+
+    .attendees-area {
+        width: 100%;
+        min-width: 0;
+        padding: 18px;
+        border-radius: 22px;
+    }
+
+    .checkout-progress {
+        width: 100%;
+        overflow-x: auto;
+        scrollbar-width: none;
+        padding-bottom: 6px;
+    }
+
+    .checkout-progress::-webkit-scrollbar {
+        display: none;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .form-group.full {
+        grid-column: auto !important;
+    }
+
+    input,
+    select,
+    textarea {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+        font-size: 16px;
+    }
+
+    .checkout-button {
+        width: 100%;
+        min-height: 56px;
+        font-size: 15px;
+    }
+
+    .check-row {
+        align-items: flex-start;
+    }
+
+    .check-text {
+        font-size: 12px;
+        line-height: 1.8;
+    }
+
+    /* ---------- FOOTER ---------- */
+    .footer-container {
+        width: calc(100% - 28px);
+        grid-template-columns: 1fr;
+        justify-items: center;
+        min-height: auto;
+        padding: 30px 0;
+        gap: 18px;
+    }
+
+    .footer-link,
+    .footer-logo {
+        justify-self: center;
+    }
+
+    .footer-copy {
+        flex-wrap: wrap;
+        white-space: normal;
+        justify-content: center;
+        text-align: center;
+        font-size: 11px;
+    }
+}
+
+/* =========================
+   SMALL PHONES
+========================= */
+@media (max-width: 480px) {
+    .header {
+        top: 7px;
+        left: 8px;
+        right: 8px;
+    }
+
+    .header-container {
+        height: 58px;
+        padding: 0 9px;
+    }
+
+    .header .logo {
+        width: 88px;
+    }
+
+    .mobile-menu-btn {
+        width: 40px;
+        height: 40px;
+    }
+
+    .hero {
+        padding-top: 94px;
+    }
+
+    .hero-title {
+        font-size: clamp(48px, 15vw, 62px);
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .speakers-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .speaker-image {
+        height: 230px;
+    }
+
+    .speaker-image img {
+        height: 225px;
+    }
+
+    .ticket-summary,
+    .attendees-area {
+        padding: 16px;
+    }
+}
+
+/* =========================
+   VERY SMALL PHONES
+========================= */
+@media (max-width: 380px) {
+    .header-container {
+        height: 56px;
+    }
+
+    .header .logo {
+        width: 78px;
+    }
+
+    .mobile-menu-btn {
+        width: 38px;
+        height: 38px;
+        border-radius: 10px;
+    }
+
+    .mobile-menu-btn span {
+        width: 17px;
+    }
+
+    .hero-title {
+        font-size: 46px;
+    }
+
+    .hero-desc {
+        font-size: 13px;
+    }
+
+    .journey-section h2,
+    .speakers-header h2,
+    .agenda-header h2 {
+        font-size: 32px;
+    }
+
+    .footer-copy {
+        font-size: 10px;
+    }
+}
